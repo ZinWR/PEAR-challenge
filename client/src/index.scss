@@ -1,0 +1,131 @@
+// Variables
+$font-primary: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+$color-light: rgba(255, 255, 255, 0.87);
+$color-dark-bg: #242424;
+$link-color: #646cff;
+$link-hover-color: #535bf2;
+$h1-font-size: 3.2em;
+$h1-line-height: 1.1;
+$button-bg: #1a1a1a;
+$button-hover-border: #646cff;
+$button-focus-outline: -webkit-focus-ring-color;
+$light-bg: #ffffff;
+$light-text-color: #213547;
+$light-link-hover-color: #747bff;
+$light-button-bg: #f9f9f9;
+$todo-bg: #333;
+$todo-border-radius: 5px;
+$priority-border-color: rgb(255, 34, 0);
+
+// Presets
+:root {
+  font-family: $font-primary;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: $color-light;
+  background-color: $color-dark-bg;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: $link-color;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: $link-hover-color;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: $h1-font-size;
+  line-height: $h1-line-height;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: $button-bg;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: $button-hover-border;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto $button-focus-outline;
+}
+
+// Light mode
+@media (prefers-color-scheme: light) {
+  :root {
+    color: $light-text-color;
+    background-color: $light-bg;
+  }
+
+  a:hover {
+    color: $light-link-hover-color;
+  }
+
+  button {
+    background-color: $light-button-bg;
+  }
+}
+
+// Added styles
+.todo-item {
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: $todo-bg;
+  border-radius: $todo-border-radius;
+  width: 80vw;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-title {
+  margin: 0;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.sub-todos {
+  margin-top: 10px;
+}
+
+.sub-todo-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+// Priority indicator
+.priority {
+  border-left: 5px solid $priority-border-color;
+}

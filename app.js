@@ -3,6 +3,11 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const routes = require('./server/routes');
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json({ limit: '50mb' })); 
+app.use(express.json({ limit: '50mb' })); 
+app.use(express.urlencoded({ extended: true, limit: '50mb' })); 
 
 // Serve static files from the client app
 app.use(express.static(path.join(__dirname, './client/dist')));
